@@ -54,7 +54,17 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Running on: $_platformVersion\n'),
+              TextButton(
+                  onPressed: () {
+                    Hello.toast("我是Toast");
+                  },
+                  child: const Text("点击toast"))
+            ],
+          ),
         ),
       ),
     );
